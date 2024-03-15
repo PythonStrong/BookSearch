@@ -11,7 +11,7 @@ export default function Modal({show, item,onclose}) {
    <>
    <div className="overlay">
     <div className="overlay-inner">
-        <button className='close' onClick={onclose} style={{fontSize:'30px', cursor:'pointer'}}><IoMdClose /></button>
+        <button className='close' onClick={onclose} style={{fontSize:'30px', cursor:'pointer', color:'red'}}><IoMdClose /></button>
         <div className="inner-box">
             <img src={thumbnail} alt="" />
             <div className="info">

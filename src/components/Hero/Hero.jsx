@@ -5,35 +5,38 @@ import Card from '../Card/Card';
 import axios from 'axios';
 
 function Hero() {
-  const [search, setSearch] =useState("")
+  const [search, setSearch] = useState("")
   const [bookdata, setData] = useState([])
-  const searchBook =(evt)=>{
-    if(evt.key==="Enter"){
-      axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyC9cnoeBkkczR31TjRhiKvcwfwzzO4POHE'+'&maxResults=40')
-      .then(res=>setData(res.data.items))
-      .catch(err=>console.log(err))
+  const searchBook = (evt) => {
+    if (evt.key === "Enter") {
+      axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search + '&key=AIzaSyC9cnoeBkkczR31TjRhiKvcwfwzzO4POHE' + '&maxResults=40')
+        .then(res => setData(res.data.items))
+        .catch(err => console.log(err))
     }
   }
   return (
     <>
       <div className="header">
         <div className="row1">
-          <h1>Bu Yerda O'zingiz Hohlagan Kitobni <br /> Topasz faqat ingliz tilida</h1>
+          <h1>Bu Yerda <br /> O'zingiz Hohlagan Kitobni <br /> Topasz faqat ingliz tilida</h1>
         </div>
         <div className="row2">
-          <h2>Find your book</h2>
+          <h2>Kitob Nomini Yozing</h2>
           <div className="search">
-            <input type="text" placeholder='Enter Your Name Book' value={search} onChange={e=>setSearch(e.target.value)} onKeyPress={searchBook}/>
-            <button> <CiSearch /></button>
+            <input type="text" placeholder='Enter Your Name Book' value={search} onChange={e => setSearch(e.target.value)} onKeyPress={searchBook} />
+            <button> <CiSearch size={25} /></button>
           </div>
-          <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/the-bookworm-librarian-carl-spitzweg.jpg"   alt="" />
+          <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/the-bookworm-librarian-carl-spitzweg.jpg" alt="" />
         </div>
       </div>
-        <div className="container">
-          {
-            <Card book={bookdata}/>
-          }
-        </div>
+       <div className='title'>
+        <h1>Search:{bookdata.length} Book</h1>
+       </div>
+      <div className="container">
+        {
+          <Card book={bookdata} />
+        }
+      </div>
     </>
   )
 }

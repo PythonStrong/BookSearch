@@ -1,213 +1,256 @@
-*{
-    @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800;900&display=swap);
-    font-family: 'Montserrat', sans-serif;
-    padding: 0;
-    margin: 0;
+* {
+  @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800;900&display=swap);
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
 }
-:root{
-    --primary-color:#755139FF;
-    --secondry-color:#D4B996FF;
+*::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
 }
-.body{
-    background-color: var(--primary-color);
-    font-size: 75.5%;
-}
-.header{
-    width: 100%;
-    height: 920px;
-    color: var(--secondry-color);
-    box-shadow: 0 5px 10px var(--secondry-color);
-    color: black;
-    display: flex;
-    align-items: center;
-    position: relative;
-    text-transform: capitalize;
 
+:root {
+  --primary-color: #755139ff;
+  --secondry-color: #d4b996ff;
 }
-.row1{
-    color: white;
+.body {
+  background-color: #39383dff;
+  font-size: 75.5%;
 }
-@media(max-width:1000px){
-    .row1{
-        display: none;
-    }
+.header {
+  width: 100%;
+  height: 100vh !important;
+  color: var(--secondry-color);
+  box-shadow: 0 5px 10px var(--secondry-color);
+  color: black;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-transform: capitalize;
 }
-.header::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://img.freepik.com/free-photo/abundant-collection-antique-books-wooden-shelves-generated-by-ai_188544-29660.jpg);
-    clip-path: circle(60% at left 300px);
-    /* z-index: -1; */
+.row1 {
+  color: white;
 }
-.row2{
-    position: absolute;
-    top: 10px;
-    right: 150px;
-    text-align: center;
-    color: white;
+@media (max-width: 1000px) {
+  .row1 {
+    display: none;
+  }
+  .row2 {
+    right: 15px !important;
+  }
+  .row2 input {
+    width: 300px !important;
+  }
+  .card {
+    left: 28px;
+  }
 }
-.row2 h2{
-    font-size: 3rem;
-    margin-top: 20px;
-    margin-bottom: 15px;
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://img.freepik.com/free-photo/abundant-collection-antique-books-wooden-shelves-generated-by-ai_188544-29660.jpg);
+  clip-path: circle(60% at left 300px);
 }
-.row2 img{
-    margin-top: 30px;
-    width: 250px;
+@media (max-width: 768px) {
+  .header::before {
+    background: none;
+  }
 }
-.row1 h1{
-    position: relative;
-    font-size: 2.5rem;
-    text-align: start;
-    margin-left: 35px;
+.row2 {
+  position: absolute;
+  top: 10px;
+  right: 150px;
+  text-align: center;
+  color: white;
 }
-.search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.row2 h2 {
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
-.search input{
-    outline: 0;
-    border: 0;
-    width: 350px;
-    height: 35px;
-    padding: 0 0.5rem;
-    font-size: 15px;
-    font-weight: bold
+.row2 img {
+  margin-top: 30px;
+  width: 250px;
 }
-.search button{
-    outline: none;
-    border: none;
-    height: 35px;
-    padding: 0 0.5rem;
+.row1 h1 {
+  position: relative;
+  font-size: 2.5rem;
+  text-align: start;
+  margin-left: 35px;
 }
-.container{
-    width: 65%;
-    margin: 0 auto;
-    margin-top: 45px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px, 0.5fr));
-    grid-gap: 20px;
-    box-sizing: border-box;
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.card{
-    background: var(--secondry-color);
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin-bottom: 10px;
-    box-shadow: 0 5px rgba(212, 185, 150, .5);
-    transition: .5s;
-    text-align: center;
-    position: relative;
+.search input {
+  outline: 0;
+  border: 0;
+  width: 350px;
+  height: 35px;
+  padding: 0 0.5rem;
+  font-size: 15px;
+  font-weight: bold;
 }
-.card:hover{
-    filter: blur(0.5px);
-    transform: scale(0.9);
-    background: rgba(255, 255, 255, 0.8);
+.search button {
+  outline: none;
+  border: none;
+  height: 35px;
+  padding: 0 0.5rem;
 }
-.card img{
-    width: 95%;
-    height: 250px;
-    border-radius: 1rem 1rem 0 0;
+.container {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 45px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+  grid-gap: 20px;
+  box-sizing: border-box;
 }
-.card .bottom .title{
-    font-size: 18px;
-    margin-bottom: 32px;
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  color: white;
 }
-.card .bottom .amount{
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    background: var(--primary-color);
-    color: var(--secondry-color);
-    font-size: 15px;
-    font-weight: bold;
-    padding: 0.2rem;
+
+.card {
+  background: #191c29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 6px;
+  width: 220px;
+  gap: 15px;
+  height: 430px;
+  display: flex;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
 }
-.overlay{
-    min-height: 100vh;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card img {
+  width: 94%;
 }
-.overlay-inner{
-    background: white;
-    width: 700px;
-    height: 550px;
-    padding: 1.5rem;
-    position: relative;
-    box-sizing: border-box;
-    overflow: hidden;
-    font-size: 1.3rem;
-    overflow: scroll;
+
+.card:hover:before,
+.card:hover:after {
+  animation: none;
+  opacity: 0;
 }
-.overlay-inner::-webkit-scrollbar{
-    width: 12px;
-    border-radius: 20px;
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
 }
-.overlay-inner::-webkit-scrollbar-track{
-    background: #d1e5ff;
+.card .bottom {
+  padding-left: 10px;
 }
-.overlay-inner::-webkit-scrollbar-thumb{
-    background:  linear-gradient(#755139FF,#D4B996FF);
+.card .amount {
+  background: #feca55ff;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  width: 70px;
+  border-radius: 4px;
+  font-size: 16px;
 }
-.overlay-inner .close{
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    outline: none;
-    border: none;
-    font-size: 17px;
-    background: transparent;
+
+.overlay {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.overlay-inner .inner-box{
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
+.overlay-inner {
+  background: white;
+  width: 700px;
+  height: 550px;
+  padding: 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 1.3rem;
+  overflow: scroll;
 }
-.overlay-inner .inner-box  img{
-margin-right: 20px;
-width: 150px;
-height: 200px;
+.overlay-inner::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 20px;
 }
-.overlay-inner .inner-box h3{
-    margin-top: 20px;
-    color: green;
+.overlay-inner::-webkit-scrollbar-track {
+  background: #d1e5ff;
 }
-.overlay-inner .inner-box h1{
- font-size: 35px
+.overlay-inner::-webkit-scrollbar-thumb {
+  background: linear-gradient(#755139ff, #d4b996ff);
 }
-.overlay-inner .inner-box h4{
-    margin-top: 20px;
-    color: blue;
+.overlay-inner .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  background: transparent;
 }
-.overlay-inner .inner-box button{
-    outline: none;
-    border: none;
-    width: 100px;
-    border-radius: 5px;
-    background: #24a0ed;
-    color: white;
-    font-weight: bold;
-    margin-top: 20px;
-    cursor: pointer;
-    padding: 0.5rem 0.7rem;
-    text-transform: capitalize;
+.overlay-inner .inner-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
-.overlay-inner .description{
-    margin-top: 2rem;
-    text-align: justify;
-    font-size: 13px;
+.overlay-inner .inner-box img {
+  margin-right: 20px;
+  width: 150px;
+  height: 200px;
+}
+.overlay-inner .inner-box h3 {
+  margin-top: 20px;
+  color: green;
+}
+.overlay-inner .inner-box h1 {
+  font-size: 35px;
+}
+.overlay-inner .inner-box h4 {
+  margin-top: 20px;
+  color: blue;
+}
+.overlay-inner .inner-box button {
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 5px;
+  background: #24a0ed;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+  text-transform: capitalize;
+}
+.overlay-inner .description {
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: 13px;
 }
